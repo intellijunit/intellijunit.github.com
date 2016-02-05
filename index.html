@@ -199,15 +199,131 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/iOS开发常用第三方库/" itemprop="url">
+                  iOS开发常用第三方库之一
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-05T18:29:01+00:00" content="2016-02-05">
+              2016-02-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/iOS开发常用第三方库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="iOS开发常用第三方库/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        
-        
-        
       
 
       
-    
+        
+          
+            <h1 id="iOS_u5F00_u53D1_u5E38_u7528_u7B2C_u4E09_u65B9_u5E93_u4E4B_u4E00"><a href="#iOS_u5F00_u53D1_u5E38_u7528_u7B2C_u4E09_u65B9_u5E93_u4E4B_u4E00" class="headerlink" title="iOS开发常用第三方库之一"></a>iOS开发常用第三方库之一</h1><p>个人开发者进行iOS客户端开发，不可避免要站在巨人的肩膀上，即多多利用第三方的开源库。为了给idiguer网站开发iOS客户端，现在整理出业界常用第三方库进行学习。</p>
+<h2 id="u5B66_u4E60_u539F_u5219"><a href="#u5B66_u4E60_u539F_u5219" class="headerlink" title="学习原则"></a>学习原则</h2><ul>
+<li>了解：运行一遍例子，弄清这些代码的究竟<strong>是什么</strong>；</li>
+<li>使用：在之后开发工程中<strong>使用这些例子</strong>；</li>
+<li>研究代码：研究例子的代码的<strong>实现</strong>，简单修改做出自己的效果。</li>
+</ul>
+<h2 id="u7B2C_u4E09_u65B9_u5E93_u641C_u96C6_u5206_u6790"><a href="#u7B2C_u4E09_u65B9_u5E93_u641C_u96C6_u5206_u6790" class="headerlink" title="第三方库搜集分析"></a>第三方库搜集分析</h2><h3 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h3><p>作者是 NSHipster 的博主, iOS 开发界的大神级人物, 毕业于卡内基·梅隆大学, 开源了许多牛逼的项目, 这个便是其中之一, AFNetworking 采用 NSURLConnection + NSOperation, 主要方便与服务端 API 进行数据交换, 操作简单, 功能强大, 现在许多人都用它取代 ASIHTTPRequest。研究不多，主要是用的2。</p>
+<h3 id="ASIHTTPRequest"><a href="#ASIHTTPRequest" class="headerlink" title="ASIHTTPRequest"></a>ASIHTTPRequest</h3><p>一个轻量级的 iOS 网络通信类库, 基于 CFNetwork 框架开发, 但现在已经停止更新, 多数开发者改用 AFNetworking 替代。</p>
+<h3 id="JSONKit"><a href="#JSONKit" class="headerlink" title="JSONKit"></a>JSONKit</h3><p>主要用于解析 JSON, 适用于 iOS6 以下环境, 自从 iOS5 开始 Apple 官方给出了 NSJSONSerialization API, 自此大家都用官方的了。这个百度地图也在用。</p>
+<h3 id="RestKit"><a href="#RestKit" class="headerlink" title="RestKit"></a>RestKit</h3><p>主要用于 iOS 上网络通信, 允许与 RESTful Web 服务交互, 常用于处理 API, 解析 JSON, 映射响应对象等操作, 简单易用, 方便你把所有精力都放在对数据的操作上</p>
+<h3 id="Mantle"><a href="#Mantle" class="headerlink" title="Mantle"></a>Mantle</h3><p>作者是 GitHub 的员工, 文档写的很清楚: Mantle makes it easy to write a simple model layer for your Cocoa or Cocoa Touch application, 主要用来将 JSON 数据模型化为 Model 对象, 唱吧在前段时间也改用 Mantle 了.</p>
+<h3 id="Json_Framework"><a href="#Json_Framework" class="headerlink" title="Json Framework"></a>Json Framework</h3><p>用于解析 JSON 数据的一个框架, 但是在 iOS5 以上版本大多数人都选择使用 NSJSONSerialization 来解析 JSON, 该项目现在在 GitHub 上也几乎没怎么更新了</p>
+<h3 id="JSONModel"><a href="#JSONModel" class="headerlink" title="JSONModel"></a>JSONModel</h3><p>一个能迅速解析服务器返回的 Json 数据的库, 方便数据的类型转换</p>
+<h3 id="SVPullToRefresh"><a href="#SVPullToRefresh" class="headerlink" title="SVPullToRefresh"></a>SVPullToRefresh</h3><p>一款只需一行代码便可集成上拉刷新和下拉加载的组件</p>
+<h3 id="EGOTableViewPullRefresh"><a href="#EGOTableViewPullRefresh" class="headerlink" title="EGOTableViewPullRefresh"></a>EGOTableViewPullRefresh</h3><p>一款提供下拉刷新的控件, 最后更新时间是一年前。</p>
+<h2 id="u4E2A_u4EBA_u5206_u6790"><a href="#u4E2A_u4EBA_u5206_u6790" class="headerlink" title="个人分析"></a>个人分析</h2><p>现在网络肯定用AFNetworking了，JSON解析肯定用官方的。不更新的项目一般也不要选择。</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -304,131 +420,6 @@
               阅读全文 &raquo;
             </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/iOS开发常用第三方库/" itemprop="url">
-                  iOS开发常用第三方库之一
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-05T18:27:01+00:00" content="2016-02-05">
-              2016-02-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/iOS开发常用第三方库/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="iOS开发常用第三方库/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="iOS_u5F00_u53D1_u5E38_u7528_u7B2C_u4E09_u65B9_u5E93_u4E4B_u4E00"><a href="#iOS_u5F00_u53D1_u5E38_u7528_u7B2C_u4E09_u65B9_u5E93_u4E4B_u4E00" class="headerlink" title="iOS开发常用第三方库之一"></a>iOS开发常用第三方库之一</h1><p>个人开发者进行iOS客户端开发，不可避免要站在巨人的肩膀上，即多多利用第三方的开源库。为了给idiguer网站开发iOS客户端，现在整理出业界常用第三方库进行学习。</p>
-<h2 id="u5B66_u4E60_u539F_u5219"><a href="#u5B66_u4E60_u539F_u5219" class="headerlink" title="学习原则"></a>学习原则</h2><ul>
-<li>了解：运行一遍例子，弄清这些代码的究竟<strong>是什么</strong>；</li>
-<li>使用：在之后开发工程中<strong>使用这些例子</strong>；</li>
-<li>研究代码：研究例子的代码的<strong>实现</strong>，简单修改做出自己的效果。</li>
-</ul>
-<h2 id="u7B2C_u4E09_u65B9_u5E93_u641C_u96C6_u5206_u6790"><a href="#u7B2C_u4E09_u65B9_u5E93_u641C_u96C6_u5206_u6790" class="headerlink" title="第三方库搜集分析"></a>第三方库搜集分析</h2><h3 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h3><p>作者是 NSHipster 的博主, iOS 开发界的大神级人物, 毕业于卡内基·梅隆大学, 开源了许多牛逼的项目, 这个便是其中之一, AFNetworking 采用 NSURLConnection + NSOperation, 主要方便与服务端 API 进行数据交换, 操作简单, 功能强大, 现在许多人都用它取代 ASIHTTPRequest。研究不多，主要是用的2。</p>
-<h3 id="ASIHTTPRequest"><a href="#ASIHTTPRequest" class="headerlink" title="ASIHTTPRequest"></a>ASIHTTPRequest</h3><p>一个轻量级的 iOS 网络通信类库, 基于 CFNetwork 框架开发, 但现在已经停止更新, 多数开发者改用 AFNetworking 替代。</p>
-<h3 id="JSONKit"><a href="#JSONKit" class="headerlink" title="JSONKit"></a>JSONKit</h3><p>主要用于解析 JSON, 适用于 iOS6 以下环境, 自从 iOS5 开始 Apple 官方给出了 NSJSONSerialization API, 自此大家都用官方的了。这个百度地图也在用。</p>
-<h3 id="RestKit"><a href="#RestKit" class="headerlink" title="RestKit"></a>RestKit</h3><p>主要用于 iOS 上网络通信, 允许与 RESTful Web 服务交互, 常用于处理 API, 解析 JSON, 映射响应对象等操作, 简单易用, 方便你把所有精力都放在对数据的操作上</p>
-<h3 id="Mantle"><a href="#Mantle" class="headerlink" title="Mantle"></a>Mantle</h3><p>作者是 GitHub 的员工, 文档写的很清楚: Mantle makes it easy to write a simple model layer for your Cocoa or Cocoa Touch application, 主要用来将 JSON 数据模型化为 Model 对象, 唱吧在前段时间也改用 Mantle 了.</p>
-<h3 id="Json_Framework"><a href="#Json_Framework" class="headerlink" title="Json Framework"></a>Json Framework</h3><p>用于解析 JSON 数据的一个框架, 但是在 iOS5 以上版本大多数人都选择使用 NSJSONSerialization 来解析 JSON, 该项目现在在 GitHub 上也几乎没怎么更新了</p>
-<h3 id="JSONModel"><a href="#JSONModel" class="headerlink" title="JSONModel"></a>JSONModel</h3><p>一个能迅速解析服务器返回的 Json 数据的库, 方便数据的类型转换</p>
-<h3 id="SVPullToRefresh"><a href="#SVPullToRefresh" class="headerlink" title="SVPullToRefresh"></a>SVPullToRefresh</h3><p>一款只需一行代码便可集成上拉刷新和下拉加载的组件</p>
-<h3 id="EGOTableViewPullRefresh"><a href="#EGOTableViewPullRefresh" class="headerlink" title="EGOTableViewPullRefresh"></a>EGOTableViewPullRefresh</h3><p>一款提供下拉刷新的控件, 最后更新时间是一年前。</p>
-<h2 id="u4E2A_u4EBA_u5206_u6790"><a href="#u4E2A_u4EBA_u5206_u6790" class="headerlink" title="个人分析"></a>个人分析</h2><p>现在网络肯定用AFNetworking了，JSON解析肯定用官方的。不更新的项目一般也不要选择。</p>
-
-          
         
       
     </div>
