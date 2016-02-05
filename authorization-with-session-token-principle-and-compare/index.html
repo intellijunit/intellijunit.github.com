@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Authorization,Cookie,Session," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="Awesome, you’ve just made a new workspace!Workspaces are fantastic for organizing your work. This new workspace, which lives inside the ‘Workspaces’ folder of your homedirectory, is a place where you">
+<meta name="description" content="授权概述我们做网站也需要用户登陆，做App也需要用户登陆，网站登陆传统的做法是采用Session来进行验证，移动App通常采用Token进行验证，下面简要分析二者说说不同。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="智元腾设">
-<meta property="og:url" content="www.intelligentunit.com/README/index.html">
+<meta property="og:title" content="用户授权(Authorization)的之Session和Token的原理和比较">
+<meta property="og:url" content="www.intelligentunit.com/authorization-with-session-token-principle-and-compare/index.html">
 <meta property="og:site_name" content="智元腾设">
-<meta property="og:description" content="Awesome, you’ve just made a new workspace!Workspaces are fantastic for organizing your work. This new workspace, which lives inside the ‘Workspaces’ folder of your homedirectory, is a place where you">
-<meta property="og:updated_time" content="2016-01-31T11:29:26.000Z">
+<meta property="og:description" content="授权概述我们做网站也需要用户登陆，做App也需要用户登陆，网站登陆传统的做法是采用Session来进行验证，移动App通常采用Token进行验证，下面简要分析二者说说不同。">
+<meta property="og:updated_time" content="2016-02-05T10:28:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="智元腾设">
-<meta name="twitter:description" content="Awesome, you’ve just made a new workspace!Workspaces are fantastic for organizing your work. This new workspace, which lives inside the ‘Workspaces’ folder of your homedirectory, is a place where you">
+<meta name="twitter:title" content="用户授权(Authorization)的之Session和Token的原理和比较">
+<meta name="twitter:description" content="授权概述我们做网站也需要用户登陆，做App也需要用户登陆，网站登陆传统的做法是采用Session来进行验证，移动App通常采用Token进行验证，下面简要分析二者说说不同。">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title>  | 智元腾设 </title>
+  <title> 用户授权(Authorization)的之Session和Token的原理和比较 | 智元腾设 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -214,7 +214,7 @@
             
             
               
-                
+                用户授权(Authorization)的之Session和Token的原理和比较
               
             
           </h1>
@@ -226,19 +226,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-31T11:29:26+00:00" content="2016-01-31">
-              2016-01-31
+            <time itemprop="dateCreated" datetime="2016-02-05T18:27:01+00:00" content="2016-02-05">
+              2016-02-05
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Play-Framework/" itemprop="url" rel="index">
+                    <span itemprop="name">Play-Framework</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/README/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="README/" itemprop="commentsCount"></span>
+                <a href="/authorization-with-session-token-principle-and-compare/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="authorization-with-session-token-principle-and-compare/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -259,33 +278,62 @@
       
 
       
-        <h1 id="Awesome_2C_you_u2019ve_just_made_a_new_workspace_21"><a href="#Awesome_2C_you_u2019ve_just_made_a_new_workspace_21" class="headerlink" title="Awesome, you’ve just made a new workspace!"></a>Awesome, you’ve just made a new workspace!</h1><p>Workspaces are fantastic for organizing your work. This new workspace, which lives inside the ‘Workspaces’ folder of your home<br>directory, is a place where you can store all relevant and related files to a particular project. For example, if you<br>are working on multiple projects, its nice to have them separated as follows:<br>-|home dir<br>   -|Workspaces<br>    -| Project 1<br>    -| Project 2<br>    -| Project 3</p>
-<p>Workspaces help keep your projects organized. You can create any number of workspaces. There are no limits.</p>
-<p>Note: A workspace folder is just a regular folder so you can create any number of files and folders inside it.</p>
-<p>As you move back and forth between your workspaces, Koding will remember everything about each workspace. This includes things<br>like IDE settings, files open, Terminals open, etc.</p>
-<p>Enjoy and Happy Koding!</p>
+        <h2 id="u6388_u6743_u6982_u8FF0"><a href="#u6388_u6743_u6982_u8FF0" class="headerlink" title="授权概述"></a>授权概述</h2><p>我们做网站也需要用户登陆，做App也需要用户登陆，网站登陆传统的做法是采用Session来进行验证，移动App通常采用Token进行验证，下面简要分析二者说说不同。<br><a id="more"></a></p>
+<h2 id="Session_u4E0ECookie"><a href="#Session_u4E0ECookie" class="headerlink" title="Session与Cookie"></a>Session与Cookie</h2><p>参考<a href="http://www.haomou.net/2014/08/07/2014_session/" target="_blank" rel="external">关于Session的理解</a><br>大家都知道Session和Cookie是分别保存在服务器和本地的。基本概念不详述。</p>
+<h2 id="Session_u7684_u5DE5_u4F5C_u539F_u7406"><a href="#Session_u7684_u5DE5_u4F5C_u539F_u7406" class="headerlink" title="Session的工作原理"></a>Session的工作原理</h2><ol>
+<li>生成全局唯一标识符（Sessionid）</li>
+<li>开辟数据存款空间，可以是服务器的内存也可以是持久化保持（文件或者数据库）</li>
+<li>将Sessionid发给客户的（问题的关键就在服务端如何发送这个session的唯一标识上。联系到HTTP协议，数据无非可以放到请求行、头域或Body里，</li>
+<li>客户端发送每一条request的时候附带Sessionid（这样就可以知道状态了），一般来说会有两种常用的方式：cookie和URL重写。）<ol>
+<li>Cookie，就是客户端访问的时候附带这个包括了sessionid的cookie，这样服务器就根据它获取了session</li>
+<li>URL重写，如果禁用了cookie也可以用直接在URL后面加上Sessionid</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>其实Authorization就是一个令牌，避免每次都输入用户名和密码，所以需要一个临时的令牌来替代用户名和密码的功能。因为http是无状态的，而Session和Cookie的出现就是为了弥补http协议的不足。</p>
+</blockquote>
+<h3 id="SESSION_u52AB_u6301"><a href="#SESSION_u52AB_u6301" class="headerlink" title="SESSION劫持"></a>SESSION劫持</h3><p>假设有一个页面，每一次访问这个页面计数器都加1，这个计数保存在session中。计数器的值会被打印到页面。另外，为了比较简单地模拟，笔者禁用了客户端（采用firefox3.0）的cookie，转而改用URL重写方式，因为直接复制链接要比伪造cookie方便多了。</p>
+<p>然后点击index链接来刷新计数器，注意不要刷新当前页，因为我们没用采用cookie的方式，只能在url后面带上jsessionid，而此时地址栏里的url是无法带上jsessionid的。我把计数器刷新到了20。</p>
+<p>复制firefox地址栏里的地址（笔者看到的是<a href="http://localhost:8080/session/index.jsp;jsessionid=1380D9F60BCE9C30C3A7CBF59454D0A5），然后打开另一个浏览器，此处不必将其cookie禁用。这里我打开了苹果的safari3浏览器，然后将地址粘贴到其地址栏里，发现计数为21。" target="_blank" rel="external">http://localhost:8080/session/index.jsp;jsessionid=1380D9F60BCE9C30C3A7CBF59454D0A5），然后打开另一个浏览器，此处不必将其cookie禁用。这里我打开了苹果的safari3浏览器，然后将地址粘贴到其地址栏里，发现计数为21。</a></p>
+<p>很奇怪吧，计数器直接到了21。这个例子笔者是在同一台计算机上做的，不过即使换用两台来做，其结果也是一样的。此时如果交替点击两个浏览器里的index链接你会发现他们其实操纵的是同一个计数器。其实不必惊讶，此处safari盗用了firefox和tomcat之间的维持会话的钥匙，即jsessionid，这属于session hijack的一种。在tomcat看来，safari交给了它一个jsessionid，由于HTTP协议的无状态性，它无法得知这个jsessionid是从firefox那里“劫持”来的，它依然会去查找对应的session，并执行相关计算。而此时firefox也无法得知自己的保持会话已经被“劫持”。</p>
+<h2 id="Token_u5DE5_u4F5C_u539F_u7406"><a href="#Token_u5DE5_u4F5C_u539F_u7406" class="headerlink" title="Token工作原理"></a>Token工作原理</h2><p>Token和Session有第一定的类似，但是服务器不保存状态，而是生成一个Token保存在客户端，这个Token是加密并确保完整性和不变性的，也就是修改后无效的，所以是安全的，可以保存在客户端。<br>原理图如下<a href="/../authorization-with-session-token-principle-and-compare/jwt-diagram.png"></a></p>
+<h2 id="u4E8C_u8005_u6BD4_u8F83"><a href="#u4E8C_u8005_u6BD4_u8F83" class="headerlink" title="二者比较"></a>二者比较</h2><p>Session的状态是存储在服务器端，客户端只有session id；而Token的状态是存储在客户端 </p>
+<p>其它细枝末节的区别，全部是由这一点造成的。 </p>
+<p>就没人想过为什么token-based的authentication需要一堆secret key来干嘛么？<br>因为状态信息全部是放在客户端，为了避免被篡改，于是需要用密码学的方法来签名/加密。 </p>
+<p>可以自己去这里玩玩JWT的Debugger：<br><a href="http://jwt.io/" target="_blank" rel="external">http://jwt.io/</a><br>一进去你就会注意到两点： </p>
+<ol>
+<li>Token解码后就包含所有登陆信息 </li>
+<li>Token你随便改一位都会提示无效 </li>
+</ol>
 
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Authorization/" rel="tag">#Authorization</a>
+          
+            <a href="/tags/Cookie/" rel="tag">#Cookie</a>
+          
+            <a href="/tags/Session/" rel="tag">#Session</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/麦肯锡方法/" rel="next" title="麦肯锡方法">
-                <i class="fa fa-chevron-left"></i> 麦肯锡方法
+              <a href="/learning-play-framework/" rel="next" title="Play-Framework学习路线">
+                <i class="fa fa-chevron-left"></i> Play-Framework学习路线
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/learning-play-framework/" rel="prev" title="Play-Framework学习路线">
-                Play-Framework学习路线 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -307,12 +355,15 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="README/"
-           data-title="" data-url="www.intelligentunit.com/README/">
+      <div class="ds-thread" data-thread-key="authorization-with-session-token-principle-and-compare/"
+           data-title="用户授权(Authorization)的之Session和Token的原理和比较" data-url="www.intelligentunit.com/authorization-with-session-token-principle-and-compare/">
       </div>
     
   </div>
@@ -371,7 +422,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -431,7 +482,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Awesome_2C_you_u2019ve_just_made_a_new_workspace_21"><span class="nav-number">1.</span> <span class="nav-text">Awesome, you’ve just made a new workspace!</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6388_u6743_u6982_u8FF0"><span class="nav-number">1.</span> <span class="nav-text">授权概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session_u4E0ECookie"><span class="nav-number">2.</span> <span class="nav-text">Session与Cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session_u7684_u5DE5_u4F5C_u539F_u7406"><span class="nav-number">3.</span> <span class="nav-text">Session的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SESSION_u52AB_u6301"><span class="nav-number">3.1.</span> <span class="nav-text">SESSION劫持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token_u5DE5_u4F5C_u539F_u7406"><span class="nav-number">4.</span> <span class="nav-text">Token工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E8C_u8005_u6BD4_u8F83"><span class="nav-number">5.</span> <span class="nav-text">二者比较</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
