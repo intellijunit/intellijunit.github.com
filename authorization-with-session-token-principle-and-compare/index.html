@@ -65,7 +65,8 @@
 <meta property="og:url" content="www.intelligentunit.com/authorization-with-session-token-principle-and-compare/index.html">
 <meta property="og:site_name" content="智元腾设">
 <meta property="og:description" content="授权概述我们做网站也需要用户登陆，做App也需要用户登陆，网站登陆传统的做法是采用Session来进行验证，移动App通常采用Token进行验证，下面简要分析二者说说不同。">
-<meta property="og:updated_time" content="2016-02-05T10:28:10.000Z">
+<meta property="og:image" content="www.intelligentunit.com/../authorization-with-session-token-principle-and-compare/jwt-diagram.png">
+<meta property="og:updated_time" content="2016-02-05T10:52:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用户授权(Authorization)的之Session和Token的原理和比较">
 <meta name="twitter:description" content="授权概述我们做网站也需要用户登陆，做App也需要用户登陆，网站登陆传统的做法是采用Session来进行验证，移动App通常采用Token进行验证，下面简要分析二者说说不同。">
@@ -295,9 +296,9 @@
 </blockquote>
 <h3 id="SESSION_u52AB_u6301"><a href="#SESSION_u52AB_u6301" class="headerlink" title="SESSION劫持"></a>SESSION劫持</h3><p>假设有一个页面，每一次访问这个页面计数器都加1，这个计数保存在session中。计数器的值会被打印到页面。另外，为了比较简单地模拟，笔者禁用了客户端（采用firefox3.0）的cookie，转而改用URL重写方式，因为直接复制链接要比伪造cookie方便多了。</p>
 <p>然后点击index链接来刷新计数器，注意不要刷新当前页，因为我们没用采用cookie的方式，只能在url后面带上jsessionid，而此时地址栏里的url是无法带上jsessionid的。我把计数器刷新到了20。</p>
-<p>复制firefox地址栏里的地址（笔者看到的是<a href="http://localhost:8080/session/index.jsp;jsessionid=1380D9F60BCE9C30C3A7CBF59454D0A5），然后打开另一个浏览器，此处不必将其cookie禁用。这里我打开了苹果的safari3浏览器，然后将地址粘贴到其地址栏里，发现计数为21。" target="_blank" rel="external">http://localhost:8080/session/index.jsp;jsessionid=1380D9F60BCE9C30C3A7CBF59454D0A5），然后打开另一个浏览器，此处不必将其cookie禁用。这里我打开了苹果的safari3浏览器，然后将地址粘贴到其地址栏里，发现计数为21。</a></p>
+<p>复制firefox地址栏里的地址笔者看到的是<a href="/">http://localhost:8080/session/index.jsp;jsessionid=1380D9F60BCE9C30C3A7CBF59454D0A5</a>，然后打开另一个浏览器，此处不必将其cookie禁用。这里我打开了苹果的safari3浏览器，然后将地址粘贴到其地址栏里，发现计数为21。</p>
 <p>很奇怪吧，计数器直接到了21。这个例子笔者是在同一台计算机上做的，不过即使换用两台来做，其结果也是一样的。此时如果交替点击两个浏览器里的index链接你会发现他们其实操纵的是同一个计数器。其实不必惊讶，此处safari盗用了firefox和tomcat之间的维持会话的钥匙，即jsessionid，这属于session hijack的一种。在tomcat看来，safari交给了它一个jsessionid，由于HTTP协议的无状态性，它无法得知这个jsessionid是从firefox那里“劫持”来的，它依然会去查找对应的session，并执行相关计算。而此时firefox也无法得知自己的保持会话已经被“劫持”。</p>
-<h2 id="Token_u5DE5_u4F5C_u539F_u7406"><a href="#Token_u5DE5_u4F5C_u539F_u7406" class="headerlink" title="Token工作原理"></a>Token工作原理</h2><p>Token和Session有第一定的类似，但是服务器不保存状态，而是生成一个Token保存在客户端，这个Token是加密并确保完整性和不变性的，也就是修改后无效的，所以是安全的，可以保存在客户端。<br>原理图如下<a href="/../authorization-with-session-token-principle-and-compare/jwt-diagram.png"></a></p>
+<h2 id="Token_u5DE5_u4F5C_u539F_u7406"><a href="#Token_u5DE5_u4F5C_u539F_u7406" class="headerlink" title="Token工作原理"></a>Token工作原理</h2><p>Token和Session有第一定的类似，但是服务器不保存状态，而是生成一个Token保存在客户端，这个Token是加密并确保完整性和不变性的，也就是修改后无效的，所以是安全的，可以保存在客户端。<br>原理图如下<img src="/../authorization-with-session-token-principle-and-compare/jwt-diagram.png" alt=""></p>
 <h2 id="u4E8C_u8005_u6BD4_u8F83"><a href="#u4E8C_u8005_u6BD4_u8F83" class="headerlink" title="二者比较"></a>二者比较</h2><p>Session的状态是存储在服务器端，客户端只有session id；而Token的状态是存储在客户端 </p>
 <p>其它细枝末节的区别，全部是由这一点造成的。 </p>
 <p>就没人想过为什么token-based的authentication需要一堆secret key来干嘛么？<br>因为状态信息全部是放在客户端，为了避免被篡改，于是需要用密码学的方法来签名/加密。 </p>
